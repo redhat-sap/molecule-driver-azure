@@ -26,7 +26,7 @@ from molecule import util
 LOG = logger.get_logger(__name__)
 
 
-class Azure(Driver):
+class MoleculeDriverAzure(Driver):
     """
     The class responsible for managing `Azure`_ instances.  `Azure`_
     is ``not`` the default driver used in Molecule.
@@ -75,8 +75,8 @@ class Azure(Driver):
     """  # noqa
 
     def __init__(self, config=None):
-        super(Azure, self).__init__(config)
-        self._name = "azure"
+        super(MoleculeDriverAzure, self).__init__(config)
+        self._name = "molecule-driver-azure"
 
     @property
     def name(self):

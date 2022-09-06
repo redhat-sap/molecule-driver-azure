@@ -21,52 +21,6 @@ LOG = logger.get_logger(__name__)
 
 
 class MoleculeDriverAzure(Driver):
-    """
-    The class responsible for managing `Azure`_ instances.  `Azure`_
-    is ``not`` the default driver used in Molecule.
-
-    Molecule leverages Ansible's `azure_module`_, by mapping variables
-    from ``molecule.yml`` into ``create.yml`` and ``destroy.yml``.
-
-    .. _`azure_module`: https://docs.ansible.com/ansible/latest/guide_azure.html
-
-    .. code-block:: yaml
-
-        driver:
-          name: azure
-        platforms:
-          - name: instance
-
-    .. code-block:: bash
-
-        $ pip install 'molecule-azure'
-
-    Change the options passed to the ssh client.
-
-    .. code-block:: yaml
-
-        driver:
-          name: azure
-          ssh_connection_options:
-            - '-o ControlPath=~/.ansible/cp/%r@%h-%p'
-
-    .. important::
-
-        Molecule does not merge lists, when overriding the developer must
-        provide all options.
-
-    Provide a list of files Molecule will preserve, relative to the scenario
-    ephemeral directory, after any ``destroy`` subcommand execution.
-
-    .. code-block:: yaml
-
-        driver:
-          name: azure
-          safe_files:
-            - foo
-
-    .. _`Azure`: https://azure.microsoft.com
-    """  # noqa
 
     def __init__(self, config=None):
         super(MoleculeDriverAzure, self).__init__(config)

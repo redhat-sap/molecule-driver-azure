@@ -12,5 +12,5 @@
 # You should have received a copy of the GNU General Public License along with this program.
 # If not, see <https://www.gnu.org/licenses/>.
 
-- name: Destroy
-  ansible.builtin.import_playbook: molecule.driver.azure_destroy
+- name: Side effect
+  ansible.builtin.import_playbook: molecule.driver.azure_side_effect

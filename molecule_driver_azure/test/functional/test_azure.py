@@ -31,6 +31,7 @@ from molecule.test.conftest import change_dir_to
 LOG = logger.get_logger(__name__)
 
 
+
 def test_command_init_scenario(temp_dir):
     role_directory = os.path.join(temp_dir.strpath, "test-init")
     cmd = ["molecule", "init", "role", "test-init"]

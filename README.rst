@@ -2,7 +2,8 @@
 Molecule Driver for Azure
 *************************
 
-Molecule driver Azure is a python plugin that allows to create Azure compute resources to test Ansible roles.
+Molecule driver Azure is a python plugin that allows to create Azure compute
+resources to test Ansible roles.
 
 Documentation
 =============

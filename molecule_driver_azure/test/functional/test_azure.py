@@ -41,6 +41,19 @@ def test_command_init_scenario(temp_dir):
     assert result.returncode == 0
 
     with change_dir_to(role_directory):
+        #  The default scenario not found. Please create a scenario named 'default' first.
+        cmd = [
+            "molecule",
+            "init",
+            "scenario",
+            "default",
+            "--role-name",
+            "test_init",
+            "--driver-name",
+            "molecule-driver-azure",
+        ]
+        result = run_command(cmd)
+        assert result.returncode == 0
 
         scenario_directory = os.path.join(molecule_directory(), "test-scenario")
         cmd = [
@@ -49,7 +62,7 @@ def test_command_init_scenario(temp_dir):
             "scenario",
             "test-scenario",
             "--role-name",
-            "test_namespace.test_init",
+            "test_init",
             "--driver-name",
             "molecule-driver-azure",
         ]

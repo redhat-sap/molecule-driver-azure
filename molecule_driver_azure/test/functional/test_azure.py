@@ -49,7 +49,7 @@ def test_command_init_scenario(temp_dir):
             "--role-name",
             "test-init",
             "--driver-name",
-            "azure",
+            "molecule-driver-azure",
         ]
         result = run_command(cmd)
         assert result.returncode == 0

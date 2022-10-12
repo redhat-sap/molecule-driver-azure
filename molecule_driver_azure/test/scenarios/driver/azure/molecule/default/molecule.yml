@@ -2,7 +2,7 @@
 dependency:
   name: galaxy
 driver:
-  name: azure
+  name: molecule-driver-azure
 platforms:
   - name: instance
 provisioner:

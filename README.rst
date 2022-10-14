@@ -8,4 +8,4 @@ resources to test Ansible roles.
 Documentation
 =============
 
-Read the documentation and more at `molecule-driver-azure <https://github.com/kksat/molecule-driver-azure>`_
+Read the documentation and more at `molecule-driver-azure <https://github.com/redhat-sap/molecule-driver-azure>`_

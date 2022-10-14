@@ -27,7 +27,6 @@ LOG = logger.get_logger(__name__)
 
 
 class MoleculeDriverAzure(Driver):
-
     def __init__(self, config=None):
         super(MoleculeDriverAzure, self).__init__(config)
         self._name = "molecule-driver-azure"

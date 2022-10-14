@@ -3,5 +3,7 @@
   hosts: all
   gather_facts: false
   become: true
-  roles:
-    - molecule
+  tasks:
+  - name: Converge
+    ansible.builtin.debug:
+      msg: "Converge"

@@ -23,12 +23,6 @@ jobs:
       matrix:
         include:
           - tox_env: lint
-          - tox_env: py36
-            PREFIX: PYTEST_REQPASS=2
-          - tox_env: py36-devel
-            PREFIX: PYTEST_REQPASS=2
-          - tox_env: py37
-            PREFIX: PYTEST_REQPASS=2
           - tox_env: py38
             PREFIX: PYTEST_REQPASS=2
           - tox_env: py39
@@ -75,10 +69,10 @@ jobs:
       TOXENV: packaging
 
     steps:
-      - name: Switch to using Python 3.6 by default
+      - name: Switch to using Python 3.8 by default
         uses: actions/setup-python@v2
         with:
-          python-version: 3.6
+          python-version: 3.8
       - name: Install tox
         run: python -m pip install --user tox
       - name: Check out src from Git

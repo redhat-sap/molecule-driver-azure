@@ -54,6 +54,8 @@ jobs:
       - name: Install a default Python
         uses: actions/setup-python@v4
         if: ${{ ! contains(matrix.tox_env, 'py') }}
+        with:
+          python-version: 3.8
       # Be sure to install the version of python needed by a specific test, if necessary
       - name: Set up Python version
         uses: actions/setup-python@v4

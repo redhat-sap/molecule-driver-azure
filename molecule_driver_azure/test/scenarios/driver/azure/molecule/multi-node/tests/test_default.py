@@ -22,7 +22,8 @@ def test_etc_molecule_directory(host):
 
 
 def test_etc_molecule_ansible_hostname_file(host):
-    filename = "/etc/molecule/{}".format(host.check_output("hostname -s"))
+    hostname = host.check_output("hostname -s")
+    filename = f"/etc/molecule/{hostname!s}"
     f = host.file(filename)
 
     assert f.is_file

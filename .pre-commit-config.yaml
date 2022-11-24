@@ -22,17 +22,6 @@ repos:
     rev: v1.0.0
     hooks:
       - id: doc8
-  - repo: https://github.com/python/black.git
-    rev: 22.10.0
-    hooks:
-      - id: black
-        language_version: python3
-  - repo: https://gitlab.com/pycqa/flake8.git
-    rev: 3.9.2
-    hooks:
-      - id: flake8
-        additional_dependencies:
-          - flake8-black
   - repo: https://github.com/codespell-project/codespell.git
     rev: v2.2.1
     hooks:
@@ -45,10 +34,20 @@ repos:
         args: []
         require_serial: false
         additional_dependencies: []
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
   - repo: https://github.com/PyCQA/flake8.git
     rev: 5.0.4
     hooks:
       - id: flake8
+        additional_dependencies:
+          - flake8-bugbear
+          - flake8-comprehensions
+          - flake8-use-fstring
+          - flake8-print
+          - flake8-tidy-imports
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.28.0
     hooks:

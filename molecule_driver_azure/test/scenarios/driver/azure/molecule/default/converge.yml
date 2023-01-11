@@ -4,6 +4,6 @@
   gather_facts: false
   become: true
   tasks:
-  - name: Converge
-    ansible.builtin.debug:
-      msg: "Converge"
+    - name: Converge
+      ansible.builtin.debug:
+        msg: "Converge"

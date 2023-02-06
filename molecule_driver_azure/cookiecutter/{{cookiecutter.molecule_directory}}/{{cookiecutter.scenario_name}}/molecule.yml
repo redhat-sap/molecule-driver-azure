@@ -5,12 +5,32 @@ dependency:
   command: |
     ansible-galaxy install -r $MOLECULE_SCENARIO_DIRECTORY/requirements.yml
     pip install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements-azure.txt
+    pip install azure-mgmt-netapp
   # yamllint enable rule:line-length
 
 driver:
   name: molecule-driver-azure
 
 platforms:
+
+scenario:
+  create_sequence:
+    - dependency
+    - create
+  converge_sequence:
+    - dependency
+    - create
+    - converge
+  test_sequence:
+    - dependency
+    - destroy
+    - create
+    - converge
+    - idempotence
+    - verify
+    - destroy
+  destroy_sequence:
+    - destroy
 
 provisioner:
   name: ansible
